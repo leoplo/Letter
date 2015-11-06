@@ -1,5 +1,6 @@
 package letter;
 
+import city.Inhabitant;
 import letter.content.Content;
 
 public abstract class Letter<T extends Content> {
