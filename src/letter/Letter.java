@@ -14,5 +14,5 @@ public abstract class Letter<T extends Content> {
 		
 	}
 	
-	public abstract action();
+	public abstract void action();
 }
