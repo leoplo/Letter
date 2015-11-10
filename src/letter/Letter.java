@@ -5,8 +5,9 @@ import letter.content.Content;
 
 public abstract class Letter<T extends Content> {
 
+	protected final int BASIC_COST = 1;
+	
 	protected T content;
-	protected int cost;
 	protected Inhabitant sender;
 	protected Inhabitant receiver;
 
@@ -16,8 +17,11 @@ public abstract class Letter<T extends Content> {
 		this.content = content;
 	}
 
+	public abstract int cost();
+	
 	public void action() {
-		sender.city().postLetter(this);
-		sender.pays(cost);
+		sender.city().sendLetter(this);
+		sender.pays(this.cost());
 	}
+	
 }

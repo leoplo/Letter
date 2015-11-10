@@ -13,13 +13,11 @@ public class Inhabitant {
 	}
 	
 	public City city() {
-		// TODO Auto-generated method stub
-		return null;
+		return city;
 	}
 
 	public void pays(int cost) {
-		// TODO Auto-generated method stub
-		
+		bankAccount.debit(cost);
 	}
 	
 }

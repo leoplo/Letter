@@ -7,7 +7,11 @@ public class PromissoryNote extends Letter<Money> {
 
 	public PromissoryNote(Inhabitant sender, Inhabitant receiver, Money money) {
 		super(sender, receiver, money);
-		cost = SimpleLetter.COST + money.value() / 100;
+	}
+
+	@Override
+	public int cost() {
+		return 1 + content.value() / 100;
 	}
 
 }
