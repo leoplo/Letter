@@ -2,16 +2,16 @@ package city;
 
 public class BankAccount {
 	protected int amount;
-	
-	public BankAccount(){
+
+	public BankAccount() {
 		this.amount = 0;
 	}
-	
-	public void credit(int amount){
+
+	public void credit(int amount) {
 		this.amount += amount;
 	}
-	
-	public void debit(int amount){
+
+	public void debit(int amount) {
 		this.amount -= amount;
 	}
 }
