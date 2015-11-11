@@ -2,9 +2,13 @@ package letter.content;
 
 public class Money implements Content {
 
-	public int value() {
-		// TODO Auto-generated method stub
-		return 0;
+	protected int amount;
+	
+	public Money(int amount) {
+		this.amount = amount;
 	}
-
+	
+	public int getAmount() {
+		return this.amount;
+	}
 }
