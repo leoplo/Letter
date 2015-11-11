@@ -16,6 +16,10 @@ public class City {
 		this.inhabitants = new ArrayList<Inhabitant>();
 	}
 
+	public void addInhabitant(Inhabitant inhabitant){
+		inhabitants.add(inhabitant);
+	}
+	
 	public void sendLetter(Letter<?> letter) {
 		this.postbox.add(letter);
 	}
