@@ -17,6 +17,10 @@ public class Inhabitant {
 		return city;
 	}
 
+	public BankAccount bankAccount() {
+		return bankAccount;
+	}
+	
 	public void pays(int cost) {
 		bankAccount.debit(cost);
 	}

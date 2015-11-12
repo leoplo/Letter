@@ -4,7 +4,7 @@ public class BankAccount {
 	protected int amount;
 
 	public BankAccount() {
-		this.amount = 0;
+		this.amount = 5000;
 	}
 
 	public void credit(int amount) {
@@ -13,5 +13,9 @@ public class BankAccount {
 
 	public void debit(int amount) {
 		this.amount -= amount;
+	}
+	
+	public int amountRemain(){
+		return this.amount;
 	}
 }

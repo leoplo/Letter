@@ -26,13 +26,23 @@ public class CityTest {
 		assertTrue(city.inhabitants.contains(sender));
 		assertTrue(city.inhabitants.contains(receiver));
 		assertEquals(2,city.inhabitants.size());
-		
+
 		SimpleLetter letter = new SimpleLetter(sender,receiver,new Text());
 		city.sendLetter(letter);
 		
 		assertFalse(city.postbox.isEmpty());
 		assertEquals(1,city.postbox.size());
 	}
-
 	
+	/*
+	@Test
+	public void testDistributeLetter(){
+		City city = new City("Lille");
+		Inhabitant sender = new Inhabitant("sender", city);
+		Inhabitant receiver = new Inhabitant("receiver", city);
+		SimpleLetter letter = new SimpleLetter(sender,receiver,new Text());
+		city.sendLetter(letter);
+		assertTrue(true);
+		
+	}*/
 }
