@@ -14,15 +14,15 @@ public class Inhabitant {
 	}
 
 	public City city() {
-		return city;
+		return this.city;
 	}
 
 	public BankAccount bankAccount() {
-		return bankAccount;
+		return this.bankAccount;
 	}
 	
 	public void pays(int cost) {
-		bankAccount.debit(cost);
+		this.bankAccount.debit(cost);
 	}
 
 }

@@ -13,6 +13,6 @@ public class MoneyTest extends ContentTest {
 	@Test
 	public void shouldHaveMoney() {
 		Money aLotOfMoney = new Money(5000);
-		assertEquals(5000, aLotOfMoney.getAmount());
+		assertEquals(5000, aLotOfMoney.value());
 	}
 }

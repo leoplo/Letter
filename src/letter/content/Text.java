@@ -12,7 +12,7 @@ public class Text implements Content {
 		this.message = message;
 	}
 	
-	public String getMessage() {
+	public String value() {
 		return this.message;
 	}
 }

@@ -12,7 +12,7 @@ public class Money implements Content {
 		this.amount = amount;
 	}
 	
-	public int getAmount() {
+	public int value() {
 		return this.amount;
 	}
 }
