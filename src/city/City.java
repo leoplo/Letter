@@ -19,16 +19,18 @@ public class City {
 	}
 
 	public void addInhabitant(Inhabitant inhabitant){
-		inhabitants.add(inhabitant);
+		this.inhabitants.add(inhabitant);
 	}
 	
 	public void sendLetter(Letter<? extends Content> letter) {
 		this.postbox.add(letter);
+		letter.sender().pays(letter.cost());
 	}
 
 	public void distributeLetter() {
 		for (Letter<? extends Content> letter : postbox) {
 			letter.action();
+			postbox.remove(letter);
 		}
 	}
 

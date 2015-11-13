@@ -17,11 +17,16 @@ public abstract class Letter<T extends Content> {
 		this.content = content;
 	}
 
+	public Inhabitant sender() {
+		return this.sender;
+	}
+	
+	public Inhabitant receiver() {
+		return this.receiver;
+	}
+	
 	public abstract int cost();
 
-	public void action() {
-		sender.city().sendLetter(this);
-		sender.pays(this.cost());
-	}
+	public abstract void action();
 
 }
