@@ -27,6 +27,10 @@ public abstract class Letter<T extends Content> {
 	
 	public abstract int cost();
 
-	public abstract void action();
+	public void sendAction() {
+		this.sender.pays(this.cost());
+	}
+	
+	public abstract void receiveAction();
 
 }
