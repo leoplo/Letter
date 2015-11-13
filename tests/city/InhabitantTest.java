@@ -6,21 +6,14 @@ import org.junit.Test;
 public class InhabitantTest {
 	
 	@Test
-	public void testInhabitant(){
+	public void goodInhabitant(){
 		City city = new City("Lille");
 		Inhabitant inhabitant = new Inhabitant("John Doe",city);
 		assertNotNull(inhabitant);
 	}
-	
-	@Test
-	public void testInhabitantCity(){
-		City city = new City("Lille");
-		Inhabitant inhabitant = new Inhabitant("John Doe",city);
-		assertEquals(city,inhabitant.city());
-	}
 
 	@Test
-	public void testPays(){
+	public void shouldPaysLetter(){
 		City city = new City("Lille");
 		Inhabitant inhabitant = new Inhabitant("John Doe",city);
 		

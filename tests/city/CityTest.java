@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CityTest {
 
 	@Test
-	public void testCity() {
+	public void goodCity() {
 		City city = new City("Lille");
 		assertNotNull(city);
 		assertEquals("Lille",city.name);
@@ -18,7 +18,7 @@ public class CityTest {
 	}
 	
 	@Test
-	public void testSendLetter(){
+	public void shouldSendLetter(){
 		City city = new City("Lille");
 		Inhabitant sender = new Inhabitant("sender", city);
 		Inhabitant receiver = new Inhabitant("receiver", city);
@@ -34,15 +34,17 @@ public class CityTest {
 		assertEquals(1,city.postbox.size());
 	}
 	
-	/*
 	@Test
-	public void testDistributeLetter(){
+	public void shouldDistributeLetter(){
 		City city = new City("Lille");
 		Inhabitant sender = new Inhabitant("sender", city);
 		Inhabitant receiver = new Inhabitant("receiver", city);
 		SimpleLetter letter = new SimpleLetter(sender,receiver,new Text());
+		assertTrue(city.postbox.isEmpty());
 		city.sendLetter(letter);
-		assertTrue(true);
-		
-	}*/
+		assertFalse(city.postbox.isEmpty());
+		city.distributeLetter();
+		assertTrue(city.postbox.isEmpty());
+	}
+	
 }
