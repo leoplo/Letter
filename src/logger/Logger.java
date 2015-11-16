@@ -4,7 +4,6 @@ package logger;
  * The <code>Logger</code> is a singleton that allows the display (here in the
  * terminal).
  */
-
 public class Logger {
 	static protected Logger uniqueInstance = null;
 

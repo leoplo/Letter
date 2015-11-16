@@ -4,6 +4,10 @@ import city.Inhabitant;
 import letter.content.Text;
 import logger.Logger;
 
+/**
+ * A <code>SimpleLetter</code> contains <code>Text</code>
+ * The cost of this letter is regular
+ */
 public class SimpleLetter extends Letter<Text> {
 
 	public SimpleLetter(Inhabitant sender, Inhabitant receiver, Text content) {

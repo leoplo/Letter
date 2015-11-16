@@ -7,6 +7,9 @@ import java.util.List;
 import letter.Letter;
 import letter.content.Content;
 
+/**
+ * A <code>City</code> is like a distributor office : a city gathers all the post letter and will send them tomorrow
+ */
 public class City {
 	protected String name;
 	protected List<Letter<? extends Content>> postbox;
@@ -33,5 +36,4 @@ public class City {
 			postbox.remove(letter);
 		}
 	}
-
 }
