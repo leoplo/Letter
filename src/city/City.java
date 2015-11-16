@@ -33,7 +33,7 @@ public class City {
 	public void distributeLetter() {
 		for (Letter<? extends Content> letter : postbox) {
 			letter.receiveAction();
-			postbox.remove(letter);
 		}
+		postbox.clear();
 	}
 }

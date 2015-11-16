@@ -23,5 +23,16 @@ public class InhabitantTest {
 		
 		assertEquals(4995,inhabitant.bankAccount().amountRemain());
 	}
-	
+
+	@Test
+	public void shouldReceiveMoney(){
+		City city = new City("Lille");
+		Inhabitant inhabitant = new Inhabitant("John Doe",city);
+		
+		assertEquals(5000,inhabitant.bankAccount().amountRemain());
+		
+		inhabitant.receiveMoney(5);
+		
+		assertEquals(5005,inhabitant.bankAccount().amountRemain());
+	}
 }
