@@ -9,8 +9,8 @@ import city.City;
 import city.Inhabitant;
 
 public abstract class LetterTest<C extends Content> {
-	Inhabitant sender = new Inhabitant("Sender", new City("SendersCity"));
-	Inhabitant receiver = new Inhabitant("Receiver", new City("ReceiversCity"));
+	protected Inhabitant sender = new Inhabitant("Sender", new City("SendersCity"));
+	protected Inhabitant receiver = new Inhabitant("Receiver", new City("ReceiversCity"));
 
 	public abstract Letter<C> createLetter();
 

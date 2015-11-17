@@ -8,7 +8,7 @@ import letter.content.Content;
  * Any <code>Letter</code> has an action which is execute when the
  * <code>Letter</code> will be send Each <code>Letter</code> has a cost
  */
-public abstract class Letter<C extends Content> {
+public abstract class Letter<C extends Content> implements Content {
 
 	protected C content;
 	protected Inhabitant sender;

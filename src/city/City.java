@@ -27,7 +27,7 @@ public class City {
 
 	public void sendLetter(Letter<? extends Content> letter) {
 		this.postbox.add(letter);
-		letter.sender().pays(letter.cost());
+		letter.sendAction();
 	}
 
 	public void distributeLetter() {
