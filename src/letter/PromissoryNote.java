@@ -4,6 +4,11 @@ import city.Inhabitant;
 import letter.content.Money;
 import logger.Logger;
 
+/**
+ * A <code>PromissoryNote</code> contains <code>Money</code> which will be send
+ * to the receiver Then the receiver send a thanks letter to the sender of the
+ * <code>PromissoryNote</code>
+ */
 public class PromissoryNote extends Letter<Money> {
 
 	public PromissoryNote(Inhabitant sender, Inhabitant receiver, Money money) {

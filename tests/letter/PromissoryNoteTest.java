@@ -17,7 +17,8 @@ public class PromissoryNoteTest extends LetterTest<Money> {
 	public void testCost() {
 		PromissoryNote letter = createLetter();
 		assertEquals(letter.cost(), 1);
-		PromissoryNote letter2 = new PromissoryNote(sender, receiver, new Money(100));
+		PromissoryNote letter2 = new PromissoryNote(sender, receiver,
+				new Money(100));
 		assertEquals(letter2.cost(), 2);
 	}
 

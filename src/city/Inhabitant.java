@@ -1,5 +1,8 @@
 package city;
 
+/**
+ * A <code>Inhabitant</code> belongs to a city and has a bankAccount
+ */
 public class Inhabitant {
 
 	protected String name;

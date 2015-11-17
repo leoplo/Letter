@@ -7,7 +7,7 @@ import org.junit.Test;
 import letter.content.Text;
 
 public class SimpleLetterTest extends LetterTest<Text> {
-	
+
 	public SimpleLetter createLetter() {
 		return new SimpleLetter(sender, receiver, new Text());
 	}
