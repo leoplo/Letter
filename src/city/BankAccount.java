@@ -14,8 +14,8 @@ public class BankAccount {
 	public void debit(int amount) {
 		this.amount -= amount;
 	}
-	
-	public int amountRemain(){
+
+	public int amountRemain() {
 		return this.amount;
 	}
 }

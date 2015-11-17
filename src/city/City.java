@@ -3,7 +3,6 @@ package city;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import letter.Letter;
 import letter.content.Content;
 
@@ -18,13 +17,13 @@ public class City {
 		this.inhabitants = new ArrayList<Inhabitant>();
 	}
 
-	public void addInhabitant(Inhabitant inhabitant){
+	public void addInhabitant(Inhabitant inhabitant) {
 		this.inhabitants.add(inhabitant);
 	}
-	
+
 	public void sendLetter(Letter<? extends Content> letter) {
 		this.postbox.add(letter);
-		letter.sendAction();
+		letter.sender().pays(letter.cost());
 	}
 
 	public void distributeLetter() {

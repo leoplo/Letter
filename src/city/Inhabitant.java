@@ -16,7 +16,7 @@ public class Inhabitant {
 	public City city() {
 		return this.city;
 	}
-	
+
 	public String name() {
 		return this.name;
 	}
@@ -24,11 +24,11 @@ public class Inhabitant {
 	public BankAccount bankAccount() {
 		return this.bankAccount;
 	}
-	
+
 	public void pays(int cost) {
 		this.bankAccount.debit(cost);
 	}
-	
+
 	public void receiveMoney(int cost) {
 		this.bankAccount.credit(cost);
 	}
