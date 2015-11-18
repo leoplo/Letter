@@ -11,5 +11,7 @@ public abstract class SpecialLetter extends Letter<Letter<? extends Content>> {
 		if (letter instanceof UrgentLetter) {
 			throw new IllegalStateException("Cannot put an urgent letter inside your letter");
 		}
+		letter.setReceiver(receiver);
+		letter.setSender(sender);
 	}
 }

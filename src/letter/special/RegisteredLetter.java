@@ -4,6 +4,7 @@ import city.Inhabitant;
 import letter.AcknowledgmentOfReceipt;
 import letter.Letter;
 import letter.content.Text;
+import logger.Logger;
 
 public class RegisteredLetter extends SpecialLetter {
 
@@ -18,14 +19,16 @@ public class RegisteredLetter extends SpecialLetter {
 
 	@Override
 	public void sendAction() {
+		Logger logger = Logger.getLogger();
 		super.sendAction();
-		// TODO : logger
+		logger.display("RegisteredLetter envoyé \n");
 	}
 	
 	@Override
 	public void receiveAction() {
+		Logger logger = Logger.getLogger();
 		AcknowledgmentOfReceipt acknowledgmentOfReceipt = new AcknowledgmentOfReceipt(this.receiver,this.sender,new Text("acknowledgment of receipt for a registered letter"));
 		this.receiver.city().sendLetter(acknowledgmentOfReceipt);
-		// TODO : logger
+		logger.display("RegisteredLetter reçu \n");
 	}
 }

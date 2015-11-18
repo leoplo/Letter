@@ -23,6 +23,14 @@ public abstract class Letter<C extends Content> implements Content {
 	public Inhabitant sender() {
 		return this.sender;
 	}
+	
+	public void setSender(Inhabitant sender) {
+		this.sender = sender;
+	}
+	
+	public void setReceiver(Inhabitant receiver) {
+		this.receiver = receiver;
+	}
 
 	public Inhabitant receiver() {
 		return this.receiver;

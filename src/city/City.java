@@ -14,13 +14,15 @@ public class City {
 	protected String name;
 	protected List<Letter<? extends Content>> postbox;
 	protected List<Inhabitant> inhabitants;
+	protected List<Letter<? extends Content>> postman;
 
 	public City(String name) {
 		this.name = name;
 		this.postbox = new ArrayList<Letter<? extends Content>>();
 		this.inhabitants = new ArrayList<Inhabitant>();
+		this.postman = new ArrayList<Letter<? extends Content>>();
 	}
-
+	
 	public void addInhabitant(Inhabitant inhabitant) {
 		this.inhabitants.add(inhabitant);
 	}
@@ -32,8 +34,14 @@ public class City {
 
 	public void distributeLetter() {
 		for (Letter<? extends Content> letter : postbox) {
+			postman.add(letter);
+		}
+
+		postbox.clear();
+		
+		for (Letter<? extends Content> letter : postman) {
 			letter.receiveAction();
 		}
-		postbox.clear();
+		postman.clear();
 	}
 }

@@ -27,16 +27,16 @@ public class SimpleLetter extends Letter<Text> {
 		logger.display("-> " + this.sender.name()
 				+ " mails a simple letter whose content is a text content ("
 				+ this.content.value() + ") to " + this.receiver.name()
-				+ " for a cost of " + this.cost() + " euro");
+				+ " for a cost of " + this.cost() + " euro \n");
 		logger.display("   - " + this.cost() + " euros is debited from "
 				+ this.sender.name() + " account whose balance is now "
-				+ this.sender.bankAccount().amountRemain() + " euros ");
+				+ this.sender.bankAccount().amountRemain() + " euros \n");
 	}
 
 	public void receiveAction() {
 		Logger logger = Logger.getLogger();
 		logger.display("<- " + this.receiver.name()
 				+ " receives a simple letter whose content is a text content ("
-				+ this.content.value() + ") from " + this.sender.name());
+				+ this.content.value() + ") from " + this.sender.name() +"\n");
 	}
 }

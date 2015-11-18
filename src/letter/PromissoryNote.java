@@ -28,10 +28,10 @@ public class PromissoryNote extends Letter<Money> {
 				+ this.sender.name()
 				+ " mails a promissory note letter whose content is a money content ("
 				+ this.content.value() + ") to " + this.receiver.name()
-				+ " for a cost of " + this.cost() + " euros");
+				+ " for a cost of " + this.cost() + " euros \n");
 		logger.display("   - " + this.cost() + " euros is debited from "
 				+ this.sender.name() + " account whose balance is now "
-				+ this.sender.bankAccount().amountRemain() + " euros ");
+				+ this.sender.bankAccount().amountRemain() + " euros \n");
 	}
 
 	@Override
@@ -45,11 +45,11 @@ public class PromissoryNote extends Letter<Money> {
 		logger.display("   - " + this.content.value()
 				+ " euros are debited from " + this.sender.name()
 				+ " acount whose balance is now "
-				+ this.sender.bankAccount().amountRemain() + " euros");
+				+ this.sender.bankAccount().amountRemain() + " euros \n");
 		this.receiver.receiveMoney(this.content.value());
 		logger.display("   + " + this.receiver.name()
 				+ " account is credited with " + this.content.value()
 				+ " euros; its balance is now "
-				+ this.receiver.bankAccount().amountRemain() + " euros");
+				+ this.receiver.bankAccount().amountRemain() + " euros \n");
 	}
 }
