@@ -18,9 +18,9 @@ public class RegisteredLetterTest extends LetterTest<Letter<?>> {
 
 	@Test
 	public void receiverSendsAcknowledgment() {
-		assertEquals(0, receiver.numberOfLetterSent);
+		assertEquals(0, this.receiver.numberOfLetterSent());
 		createLetter().receiveAction();
-		assertEquals(1, receiver.numberOfLetterSent);
+		assertEquals(1, this.receiver.numberOfLetterSent());
 	}
 	
 	@Override

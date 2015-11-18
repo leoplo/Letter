@@ -6,11 +6,11 @@ import letter.content.Content;
 import org.junit.Test;
 
 import city.City;
-import city.Inhabitant;
+import city.MockInhabitant;
 
 public abstract class LetterTest<C extends Content> {
-	protected Inhabitant sender = new Inhabitant("Sender", new City("SendersCity"));
-	protected Inhabitant receiver = new Inhabitant("Receiver", new City("ReceiversCity"));
+	protected MockInhabitant sender = new MockInhabitant("Sender", new City("SendersCity"));
+	protected MockInhabitant receiver = new MockInhabitant("Receiver", new City("ReceiversCity"));
 
 	public abstract Letter<C> createLetter();
 
@@ -23,12 +23,12 @@ public abstract class LetterTest<C extends Content> {
 	@Test
 	public void testSender() {
 		Letter<C> letter = createLetter();
-		assertEquals(letter.sender(), "Sender");
+		assertEquals("Sender", letter.sender().name());
 	}
 
 	@Test
 	public void testReceiver() {
 		Letter<C> letter = createLetter();
-		assertEquals(letter.receiver(), "Receiver");
+		assertEquals("Receiver", letter.receiver().name());
 	}
 }

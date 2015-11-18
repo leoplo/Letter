@@ -4,19 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class InhabitantTest {
-
-	public class MockInhabitant extends Inhabitant {
-		
-		protected int numberOfLetterSent;
-		
-		public MockInhabitant() {
-			this.name = "blabla";
-			this.bankAccount = new BankAccount();
-			this.city = new MockCity(); // TODO
-			this.numberOfLetterSent = 0;
-		}
-		
-	}
 	
 	@Test
 	public void goodInhabitant() {
