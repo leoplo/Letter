@@ -22,7 +22,7 @@ public class City {
 		this.inhabitants = new ArrayList<Inhabitant>();
 		this.postman = new ArrayList<Letter<? extends Content>>();
 	}
-	
+
 	public void addInhabitant(Inhabitant inhabitant) {
 		this.inhabitants.add(inhabitant);
 	}
@@ -38,7 +38,7 @@ public class City {
 		}
 
 		postbox.clear();
-		
+
 		for (Letter<? extends Content> letter : postman) {
 			letter.receiveAction();
 		}

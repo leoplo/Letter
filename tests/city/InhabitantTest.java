@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class InhabitantTest {
-	
+
 	@Test
 	public void goodInhabitant() {
 		City city = new City("Lille");

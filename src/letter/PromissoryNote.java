@@ -2,6 +2,7 @@ package letter;
 
 import city.Inhabitant;
 import letter.content.Money;
+import letter.content.Text;
 import logger.Logger;
 
 /**
@@ -21,35 +22,26 @@ public class PromissoryNote extends Letter<Money> {
 	}
 
 	@Override
-	public void sendAction() {
-		super.sendAction();
+	public void receiveAction() {
 		Logger logger = Logger.getLogger();
-		logger.display("-> "
-				+ this.sender.name()
-				+ " mails a promissory note letter whose content is a money content ("
-				+ this.content.value() + ") to " + this.receiver.name()
-				+ " for a cost of " + this.cost() + " euros \n");
-		logger.display("   - " + this.cost() + " euros is debited from "
-				+ this.sender.name() + " account whose balance is now "
-				+ this.sender.bankAccount().amountRemain() + " euros \n");
+
+		super.receiveAction();
+
+		this.sender.pays(this.content.value());
+
+		logger.display("   - " + this.content.value() + " euros are debited from " + this.sender.name()
+				+ " acount whose balance is now " + this.sender.bankAccount().amountRemain() + " euros \n");
+		this.receiver.receiveMoney(this.content.value());
+		logger.display("   + " + this.receiver.name() + " account is credited with " + this.content.value()
+				+ " euros; its balance is now " + this.receiver.bankAccount().amountRemain() + " euros \n");
+
+		ThanksLetter thanksLetter = new ThanksLetter(this.receiver, this.sender,
+				new Text("thanks for " + this.getDescription()));
+		this.receiver.city().sendLetter(thanksLetter);
 	}
 
 	@Override
-	public void receiveAction() {
-		Logger logger = Logger.getLogger();
-		logger.display("<- "
-				+ this.receiver.name()
-				+ "receives a promissory note letter whose content is a money content ("
-				+ this.content.value() + ") from " + this.sender.name() + "\n");
-		this.sender.pays(this.content.value());
-		logger.display("   - " + this.content.value()
-				+ " euros are debited from " + this.sender.name()
-				+ " acount whose balance is now "
-				+ this.sender.bankAccount().amountRemain() + " euros \n");
-		this.receiver.receiveMoney(this.content.value());
-		logger.display("   + " + this.receiver.name()
-				+ " account is credited with " + this.content.value()
-				+ " euros; its balance is now "
-				+ this.receiver.bankAccount().amountRemain() + " euros \n");
+	public String getDescription() {
+		return "a promissory note letter whose content is a money content (" + this.content.value() + ") ";
 	}
 }

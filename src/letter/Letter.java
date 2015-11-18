@@ -2,6 +2,7 @@ package letter;
 
 import city.Inhabitant;
 import letter.content.Content;
+import logger.Logger;
 
 /**
  * A <code>Letter</code> contains a sender, a receiver and a content (anything)
@@ -23,11 +24,11 @@ public abstract class Letter<C extends Content> implements Content {
 	public Inhabitant sender() {
 		return this.sender;
 	}
-	
+
 	public void setSender(Inhabitant sender) {
 		this.sender = sender;
 	}
-	
+
 	public void setReceiver(Inhabitant receiver) {
 		this.receiver = receiver;
 	}
@@ -38,10 +39,21 @@ public abstract class Letter<C extends Content> implements Content {
 
 	public abstract int cost();
 
+	public abstract String getDescription();
+
 	public void sendAction() {
 		this.sender.pays(this.cost());
+		Logger logger = Logger.getLogger();
+		logger.display("-> " + this.sender.name() + " mails " + this.getDescription() + " to " + this.receiver.name()
+				+ " for a cost of " + this.cost() + " euros \n");
+		logger.display("    - " + this.cost() + " euros are debited from " + this.sender.name()
+				+ "account whose balance is now " + this.sender.bankAccount().amountRemain() + " euros \n");
 	}
 
-	public abstract void receiveAction();
+	public void receiveAction() {
+		Logger logger = Logger.getLogger();
+		logger.display("<- " + this.receiver.name() + " receives " + this.getDescription() + " from "
+				+ this.sender.name() + "\n");
+	}
 
 }
