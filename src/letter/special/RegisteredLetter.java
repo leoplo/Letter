@@ -5,6 +5,10 @@ import letter.AcknowledgmentOfReceipt;
 import letter.Letter;
 import letter.content.Text;
 
+/**
+ * When an <code>Inhabitant</code> receives a <code>RegisteredLetter</code>, an
+ * acknowledgement of receipt is sent to the sender
+ */
 public class RegisteredLetter extends SpecialLetter {
 
 	public RegisteredLetter(Inhabitant sender, Inhabitant receiver,
