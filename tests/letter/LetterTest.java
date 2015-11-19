@@ -16,8 +16,6 @@ public abstract class LetterTest<C extends Content> {
 
 	public abstract void testCost();
 
-	public abstract void testReceiveAction();
-
 	@Test
 	public void testSender() {
 		Letter<C> letter = createLetter();

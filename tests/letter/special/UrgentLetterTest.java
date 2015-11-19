@@ -5,14 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import letter.Letter;
-import letter.LetterTest;
 import letter.SimpleLetter;
 import letter.content.Text;
 
-public class UrgentLetterTest extends LetterTest<Letter<?>> {
+public class UrgentLetterTest extends SpecialLetterTest {
 
 	@Override
-	public Letter<Letter<?>> createLetter() {
+	public SpecialLetter createLetter() {
 		return new UrgentLetter(sender, receiver, new SimpleLetter(sender, receiver, new Text("blabla")));
 		}
 
@@ -22,17 +21,10 @@ public class UrgentLetterTest extends LetterTest<Letter<?>> {
 		Letter<Letter<?>> letter = createLetter();
 		assertEquals(2,letter.cost());		
 	}
-
-	@Override
-	public void testReceiveAction() {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	@Test
-	public void shouldBeTheDescriptionOfUrgentLetter() {
-		Letter<Letter<?>> letter = createLetter();
-		assertEquals("an urgent letter whose content is " + letter, letter.getDescription());
+	@Override
+	@Test(expected = IllegalStateException.class)
+	public void shouldNotHaveUrgentLetter() {
+		new UrgentLetter(sender,receiver,new UrgentLetter(sender,receiver,createLetter()));
 	}
-
 }

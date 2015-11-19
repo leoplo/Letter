@@ -21,20 +21,19 @@ public class PromissoryNoteTest extends LetterTest<Money> {
 		assertEquals(1, letter2.cost());
 	}
 
-	@Override
 	@Test
 	public void testReceiveAction() {
 		PromissoryNote letter = createLetter();
 		
 		assertEquals(5000,letter.sender().bankAccount().amountRemain());
-		//assertEquals(0,letter.receiver().city()); Test ThanksLetter send
+		assertEquals(5000,letter.receiver().bankAccount().amountRemain());
+		assertEquals(0,this.receiver.numberOfLetterSent());
 		
 		letter.receiveAction();
 		
 		assertEquals(4998,letter.sender().bankAccount().amountRemain());
-		//assertEquals(0,letter.receiver().city()); Test ThanksLetter in postbox
-		
-		
+		assertEquals(5099,letter.receiver().bankAccount().amountRemain());
+		assertEquals(1,this.receiver.numberOfLetterSent());
 	}
 	
 	@Test

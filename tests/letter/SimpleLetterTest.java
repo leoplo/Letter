@@ -17,9 +17,4 @@ public class SimpleLetterTest extends LetterTest<Text> {
 		SimpleLetter letter = createLetter();
 		assertEquals(SimpleLetter.BASIC_COST, letter.cost());
 	}
-
-	@Override
-	public void testReceiveAction() {
-		return;
-	}
 }
