@@ -5,13 +5,8 @@ import letter.content.Content;
 import city.Inhabitant;
 
 /**
-<<<<<<< HEAD
  * Any <code>Letter</code> can be changed into an <code>UrgentLetter</code> The
  * letter action steels the same but the cost is doubled
-=======
- * Any <code>Letter</code> can be change into an <code>UrgentLetter</code> The
- * action letter is the same but the cost is doubled
->>>>>>> efd2b2b5363f9170dc061565dcff453c23346afb
  */
 public class UrgentLetter extends SpecialLetter {
 
