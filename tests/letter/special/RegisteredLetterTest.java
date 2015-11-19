@@ -11,8 +11,9 @@ import letter.content.Text;
 public class RegisteredLetterTest extends SpecialLetterTest {
 
 	@Override
-	public SpecialLetter createLetter() {
-		return new RegisteredLetter(sender, receiver, new SimpleLetter(sender, receiver, new Text("blabla")));
+	public RegisteredLetter createLetter() {
+		return new RegisteredLetter(sender, receiver, new SimpleLetter(sender,
+				receiver, new Text("blabla")));
 	}
 
 	@Test
@@ -26,24 +27,33 @@ public class RegisteredLetterTest extends SpecialLetterTest {
 	@Test
 	public void testCost() {
 		Letter<Letter<?>> letter = createLetter();
-		assertEquals(16,letter.cost());
+		assertEquals(16, letter.cost());
 	}
 
 	@Test
 	public void testReceiveAction() {
 		RegisteredLetter letter = (RegisteredLetter) createLetter();
-		
-		assertEquals(0,this.receiver.numberOfLetterSent());
-		
+
+		assertEquals(0, this.receiver.numberOfLetterSent());
+
 		letter.receiveAction();
-		
-		assertEquals(1,this.receiver.numberOfLetterSent());
+
+		assertEquals(1, this.receiver.numberOfLetterSent());
 
 	}
 
 	@Override
 	@Test(expected = IllegalStateException.class)
 	public void shouldNotHaveUrgentLetter() {
-		new RegisteredLetter(sender,receiver,new UrgentLetter(sender,receiver,createLetter()));
+		new RegisteredLetter(sender, receiver, new UrgentLetter(sender,
+				receiver, createLetter()));
+	}
+
+	@Override
+	public void testGetDescription() {
+		RegisteredLetter letter = createLetter();
+		assertEquals(
+				letter.getDescription(),
+				"a registered letter whose content is simple letter whose content is a text content (blabla)");
 	}
 }

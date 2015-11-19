@@ -5,7 +5,8 @@ import letter.content.Text;
 
 public class AcknowledgmentOfReceipt extends SimpleLetter {
 
-	public AcknowledgmentOfReceipt(Inhabitant sender, Inhabitant receiver, Text text) {
+	public AcknowledgmentOfReceipt(Inhabitant sender, Inhabitant receiver,
+			Text text) {
 		super(sender, receiver, text);
 	}
 

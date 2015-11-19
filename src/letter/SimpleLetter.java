@@ -22,6 +22,7 @@ public class SimpleLetter extends Letter<Text> {
 
 	@Override
 	public String getDescription() {
-		return "simple letter whose content is a text content (" + this.content.value() + ")";
+		return "simple letter whose content is a text content ("
+				+ this.content.value() + ")";
 	}
 }

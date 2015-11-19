@@ -5,4 +5,3 @@ Authors:<br/>
 Léo-Paul Géneau<br/>
 Loïc Fabre<br/>
 Tony Mercier<br/>
-?Kevin Hirwa?<br/>

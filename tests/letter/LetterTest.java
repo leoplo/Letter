@@ -9,10 +9,15 @@ import city.City;
 import city.MockInhabitant;
 
 public abstract class LetterTest<C extends Content> {
-	protected MockInhabitant sender = new MockInhabitant("Sender", new City("SendersCity"));
-	protected MockInhabitant receiver = new MockInhabitant("Receiver", new City("ReceiversCity"));
+
+	protected MockInhabitant sender = new MockInhabitant("Sender", new City(
+			"SendersCity"));
+	protected MockInhabitant receiver = new MockInhabitant("Receiver",
+			new City("ReceiversCity"));
 
 	public abstract Letter<C> createLetter();
+
+	public abstract void testGetDescription();
 
 	public abstract void testCost();
 

@@ -15,4 +15,9 @@ public class MoneyTest extends ContentTest {
 		Money aLotOfMoney = new Money(5000);
 		assertEquals(5000, aLotOfMoney.value());
 	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testNegativAmountIsImpossible() {
+		new Money(-1);
+	}
 }

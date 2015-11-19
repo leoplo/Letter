@@ -10,7 +10,7 @@ public abstract class SpecialLetterTest extends LetterTest<Letter<?>> {
 
 	@Override
 	public abstract void testCost();
-	
+
 	public abstract void shouldNotHaveUrgentLetter();
-	
+
 }

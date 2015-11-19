@@ -32,19 +32,25 @@ public class Main {
 		}
 
 		Inhabitant inhabitant0 = lille.inhabitants.get(0);
-		letters.add(new SimpleLetter(inhabitant0, inhabitant0, new Text("blabla")));
-		letters.add(new PromissoryNote(inhabitant0, inhabitant0, new Money(randomInt(10))));
+		letters.add(new SimpleLetter(inhabitant0, inhabitant0, new Text(
+				"blabla")));
+		letters.add(new PromissoryNote(inhabitant0, inhabitant0, new Money(
+				randomInt(10))));
 		letters.add(new RegisteredLetter(inhabitant0, inhabitant0,
 				new SimpleLetter(inhabitant0, inhabitant0, new Text("blabla"))));
 		letters.add(new UrgentLetter(inhabitant0, inhabitant0,
 				new SimpleLetter(inhabitant0, inhabitant0, new Text("blabla"))));
-		letters.add(new RegisteredLetter(inhabitant0, inhabitant0, new RegisteredLetter(inhabitant0, inhabitant0,
-				new SimpleLetter(inhabitant0, inhabitant0, new Text("blabla")))));
+		letters.add(new RegisteredLetter(inhabitant0, inhabitant0,
+				new RegisteredLetter(inhabitant0, inhabitant0,
+						new SimpleLetter(inhabitant0, inhabitant0, new Text(
+								"blabla")))));
 		letters.add(new UrgentLetter(inhabitant0, inhabitant0,
-				new PromissoryNote(inhabitant0, inhabitant0, new Money(randomInt(10)))));
+				new PromissoryNote(inhabitant0, inhabitant0, new Money(
+						randomInt(10)))));
 
 		for (i = 1; i <= 6; i++) {
-			logger.display("************************************ \n Day" + i + "\n");
+			logger.display("************************************ \n Day" + i
+					+ "\n");
 			lille.distributeLetter();
 			for (int j = 0; j < randomInt(20); j++) {
 				Letter<?> letter = letters.get(randomInt(letters.size()));
@@ -56,7 +62,8 @@ public class Main {
 
 		while (lille.postbox.size() != 0) {
 			i++;
-			logger.display("************************************ \n Day" + i + "\n");
+			logger.display("************************************ \n Day" + i
+					+ "\n");
 			lille.distributeLetter();
 		}
 	}

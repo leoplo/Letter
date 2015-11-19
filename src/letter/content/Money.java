@@ -9,6 +9,8 @@ public class Money implements Content {
 	}
 
 	public Money(int amount) {
+		if (amount < 0)
+			throw (new IllegalArgumentException());
 		this.amount = amount;
 	}
 
