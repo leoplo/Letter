@@ -9,7 +9,7 @@ import letter.content.Text;
  */
 public class SimpleLetter extends Letter<Text> {
 
-	protected final int BASIC_COST = 1;
+	public final static int BASIC_COST = 1;
 
 	public SimpleLetter(Inhabitant sender, Inhabitant receiver, Text content) {
 		super(sender, receiver, content);

@@ -18,7 +18,7 @@ public class PromissoryNote extends Letter<Money> {
 
 	@Override
 	public int cost() {
-		return 1 + this.content.value() / 100;
+		return SimpleLetter.BASIC_COST + this.content.value() / 100;
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class PromissoryNote extends Letter<Money> {
 
 		super.receiveAction();
 
-		this.sender.pays(this.content.value());
+		this.sender.pays(this.cost());
 
 		logger.display("   - " + this.content.value() + " euros are debited from " + this.sender.name()
 				+ " acount whose balance is now " + this.sender.bankAccount().amountRemain() + " euros \n");
