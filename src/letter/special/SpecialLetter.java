@@ -5,7 +5,8 @@ import letter.Letter;
 import letter.content.Content;
 
 /**
- * A <code>SpecialLetter</code> is a letter which contains an other letter except an urgent letter
+ * A <code>SpecialLetter</code> is a letter which contains an other letter
+ * except an urgent letter
  */
 public abstract class SpecialLetter extends Letter<Letter<? extends Content>> {
 

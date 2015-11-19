@@ -24,22 +24,23 @@ public class PromissoryNoteTest extends LetterTest<Money> {
 	@Test
 	public void testReceiveAction() {
 		PromissoryNote letter = createLetter();
-		
-		assertEquals(5000,letter.sender().bankAccount().amountRemain());
-		assertEquals(5000,letter.receiver().bankAccount().amountRemain());
-		assertEquals(0,this.receiver.numberOfLetterSent());
-		
+
+		assertEquals(5000, letter.sender().bankAccount().amountRemain());
+		assertEquals(5000, letter.receiver().bankAccount().amountRemain());
+		assertEquals(0, this.receiver.numberOfLetterSent());
+
 		letter.receiveAction();
-		
-		assertEquals(4998,letter.sender().bankAccount().amountRemain());
-		assertEquals(5099,letter.receiver().bankAccount().amountRemain());
-		assertEquals(1,this.receiver.numberOfLetterSent());
+
+		assertEquals(4998, letter.sender().bankAccount().amountRemain());
+		assertEquals(5099, letter.receiver().bankAccount().amountRemain());
+		assertEquals(1, this.receiver.numberOfLetterSent());
 	}
-	
+
 	@Test
 	public void shouldBeTheDescriptionOfPromissoryNote() {
 		PromissoryNote letter = createLetter();
-		assertEquals("a promissory note letter whose content is a money content (" + letter.content.value() + ") ", letter.getDescription());
+		assertEquals("a promissory note letter whose content is a money content (" + letter.content.value() + ") ",
+				letter.getDescription());
 	}
 
 }

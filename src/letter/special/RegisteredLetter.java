@@ -6,7 +6,8 @@ import letter.Letter;
 import letter.content.Text;
 
 /**
- * 
+ * When an <code>Inhabitant</code> receives a <code>RegisteredLetter</code>, an
+ * acknowledgment of receipt is sent to the sender
  */
 public class RegisteredLetter extends SpecialLetter {
 
